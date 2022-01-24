@@ -18,6 +18,11 @@ let getStorage=()=>JSON.parse(localStorage.getItem("PMG"));
 
 let setStorage=(p)=>localStorage.setItem("PMG",JSON.stringify(p));
 
+if (getStorage()==null){
+	console.log("Huyya")
+	localStorage.setItem("PMG",'[]')
+}
+
 // Date 
 let newDate=new Date()
 dateK.innerHTML=newDate.getDate()+" - "+(newDate.getMonth()+1)+" - "+newDate.getFullYear()
@@ -41,7 +46,6 @@ modalCloseBtn.addEventListener("click",closeModal)
 function closeModal(){
 	formTitle.value=""
 	formPassword.value=""	
-	formPix.value="" 
 
 	modal.classList.add("no-display")
 	document.body.classList.remove("no-scroll")
@@ -119,6 +123,9 @@ const numPass=()=> numOfPass.innerHTML=getStorage().length;
 
 //  Display Password
 function displayPassword(){
+
+	if (getStorage()==null)
+		localStorage.setItem("PMG",'[]');
 
 	if (getStorage()){
 		passCon.innerHTML=""

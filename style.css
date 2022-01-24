@@ -261,7 +261,8 @@
 	font-size: 14px;
 }
 .main-pass{
-	margin-left:48px;	
+	width:180px;
+	margin-left:28px;	
 }
 
 .modal-inne h1{
@@ -288,7 +289,7 @@ input[type=""]:focus{
 .choose-pix{
 	display: flex;
 	flex-direction: column;
-	margin-left:70px;
+	/*margin-left:70px;*/
 }
 
 .choose-pix input{
@@ -325,6 +326,9 @@ input[type=""]:focus{
 		flex-direction: column;
 	}
 
+	.date{
+		display: none;
+	}
 	.main2{
 		flex-direction: column;
 		padding: 18px 10px;
@@ -349,7 +353,7 @@ input[type=""]:focus{
 	}
 
 	.close-modal{
-		top:25px;
+		top:20px;
 		right:20px;
 		width: 30px;
 		height: 24px;
