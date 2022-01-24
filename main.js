@@ -53,13 +53,12 @@ function closeModal(){
 
 //  Add Password
 
-function addNewPassword(one,two,three){
+function addNewPassword(one,two){
 	let defaultImg=`padlock${Math.floor(Math.random()*4)}.png`;
 	setTimeout(()=>closeModal(),300);
 
 	newStore=getStorage();
-	three=="" ?newStore.push([one,two,defaultImg]) : newStore.push([one,two,three]);
-
+	newStore.push([one,two,defaultImg])
 	setStorage(newStore);
 
 	reload()
@@ -73,10 +72,10 @@ function addNewPassword(one,two,three){
 saveBtn.addEventListener("click",()=>{
 	let a=formTitle.value
 	let b=formPassword.value	
-	let c=formPix.value , newC=c.substring(12,c.length)
+
 
 	if (!a=="" && a.length>=4 && !b=="" && b.length>=7){
-		addNewPassword(a,b,newC)
+		addNewPassword(a,b)
 	}
 
 })
